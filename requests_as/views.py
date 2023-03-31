@@ -22,7 +22,7 @@ def get_gpt_response(prompt):
     return result['choices'][0]['text']
 
 def get_gpt_response(prompt, model="gpt-3.5-turbo", max_tokens=500, n=1, temperature=0.5):
-    openai.api_key = "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"
+    openai.api_key = "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"
     response = openai.ChatCompletion.create(
         model=model,
         messages=[{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": prompt}],
