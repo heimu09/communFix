@@ -12,6 +12,7 @@ rest-framework-simplejwt = "*"
 djangorestframework-simplejwt = "*"
 faker = "*"
 openai = "*"
+httpx = "*"
 
 [dev-packages]
 

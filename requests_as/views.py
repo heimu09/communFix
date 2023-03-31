@@ -6,17 +6,23 @@ from rest_framework import status
 from rest_framework.response import Response
 
 import openai
-import requests
 
-# def get_gpt_response(prompt):
-#     openai.api_key = "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"
-#     response = openai.Completion.create(model="gpt-3.5-turbo-0301", prompt=prompt, temperature=0, max_tokens=500)
-#     print(response)
-#     result = response
-#     return result['choices'][0]['text']
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+
+from .models import Request
+from .serializers import RequestSerializer
+
+def get_gpt_response(prompt):
+    openai.api_key = "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"
+    response = openai.Completion.create(model="gpt-3.5-turbo-0301", prompt=prompt, temperature=0, max_tokens=500)
+    print(response)
+    result = response
+    return result['choices'][0]['text']
 
 def get_gpt_response(prompt, model="gpt-3.5-turbo", max_tokens=500, n=1, temperature=0.5):
-    openai.api_key = "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"
+    openai.api_key = "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"
     response = openai.ChatCompletion.create(
         model=model,
         messages=[{"role": "system", "content": "You are a helpful assistant."}, {"role": "user", "content": prompt}],
