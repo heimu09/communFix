@@ -13,6 +13,8 @@ djangorestframework-simplejwt = "*"
 faker = "*"
 openai = "*"
 httpx = "*"
+whitenoise = "*"
+gunicorn = "*"
 
 [dev-packages]
 
